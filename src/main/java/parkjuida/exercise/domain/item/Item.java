@@ -2,8 +2,10 @@ package parkjuida.exercise.domain.item;
 
 import lombok.Getter;
 import lombok.Setter;
+import parkjuida.exercise.domain.Category;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -20,4 +22,6 @@ public abstract class Item {
     private int Price;
     private int stockQuantity;
 
+    @ManyToMany(mappedBy = "items")
+    private List<Category> category;
 }
