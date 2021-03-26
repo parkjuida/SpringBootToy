@@ -2,7 +2,6 @@ package parkjuida.exercise.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import parkjuida.exercise.domain.Member;
 import parkjuida.exercise.domain.Order;
 
 import javax.persistence.EntityManager;
@@ -16,8 +15,8 @@ public class OrderRepository {
         em.persist(order);
     }
 
-    public void findOne(Long id) {
-        em.find(Order.class, id);
+    public Order findOne(Long id) {
+        return em.find(Order.class, id);
     }
 
 }

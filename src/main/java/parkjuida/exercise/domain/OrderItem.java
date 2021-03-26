@@ -9,6 +9,9 @@ import javax.persistence.*;
 @Entity
 @Getter @Setter
 public class OrderItem {
+    protected OrderItem() {
+
+    }
 
     @Id @GeneratedValue
     @Column(name = "order_item_id")
