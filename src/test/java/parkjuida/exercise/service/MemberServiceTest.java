@@ -1,4 +1,4 @@
-package parkjuida.exercise;
+package parkjuida.exercise.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
