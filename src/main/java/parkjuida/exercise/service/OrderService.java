@@ -12,6 +12,7 @@ import parkjuida.exercise.domain.item.Item;
 import parkjuida.exercise.repository.ItemRepository;
 import parkjuida.exercise.repository.MemberRepository;
 import parkjuida.exercise.repository.OrderRepository;
+import parkjuida.exercise.repository.OrderSearch;
 
 import java.util.List;
 
@@ -44,5 +45,9 @@ public class OrderService {
     public void cancelOrder(Long orderId) {
         Order order = orderRepository.findOne(orderId);
         order.cancel();
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
     }
 }
