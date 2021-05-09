@@ -14,11 +14,20 @@ import java.util.List;
 public class MemberService {
 
     private final MemberRepository memberRepository;
+    public Object update;
 
     @Transactional
     public Long join(Member member) {
         validateDuplicateMember(member);
         memberRepository.save(member);
+        return member.getId();
+    }
+
+    @Transactional
+    public Long update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+
         return member.getId();
     }
 
