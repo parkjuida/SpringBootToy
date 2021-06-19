@@ -9,7 +9,8 @@ import parkjuida.exercise.domain.Order;
 import parkjuida.exercise.domain.OrderStatus;
 import parkjuida.exercise.repository.OrderRepository;
 import parkjuida.exercise.repository.OrderSearch;
-import parkjuida.exercise.repository.OrderSimpleQueryDto;
+import parkjuida.exercise.repository.order.simpleQuery.OrderSimpleQueryDto;
+import parkjuida.exercise.repository.order.simpleQuery.OrderSimpleQueryRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,6 +23,7 @@ import static java.util.stream.Collectors.*;
 public class OrderSimpleApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderSimpleQueryRepository orderSimpleQueryRepository;
 
     @GetMapping("/api/v1/simple-orders")
     public List<Order> ordersV1() {
@@ -47,7 +49,7 @@ public class OrderSimpleApiController {
 
     @GetMapping("/api/v4/simple-orders")
     public List<OrderSimpleQueryDto> ordersV4() {
-        return orderRepository.findOrderDtos();
+        return orderSimpleQueryRepository.findOrderDtos();
     }
 
     @Data

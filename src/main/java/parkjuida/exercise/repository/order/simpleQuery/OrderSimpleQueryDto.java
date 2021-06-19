@@ -1,4 +1,4 @@
-package parkjuida.exercise.repository;
+package parkjuida.exercise.repository.order.simpleQuery;
 
 
 import lombok.Data;
