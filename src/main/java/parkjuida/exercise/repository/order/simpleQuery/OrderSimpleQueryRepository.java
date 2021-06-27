@@ -13,6 +13,7 @@ public class OrderSimpleQueryRepository {
     private final EntityManager em;
 
      public List<OrderSimpleQueryDto> findOrderDtos() {
+
         return em.createQuery(
                 "select new parkjuida.exercise.repository.order.simpleQuery.OrderSimpleQueryDto(" +
                         "o.id, m.name, o.orderDate, o.status, d.address" +
